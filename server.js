@@ -7,10 +7,15 @@ const todos = [
 ];
 
 const server = http.createServer((req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-  res.setHeader('X-Powered-By', 'Node.js');
+  res.writeHead(400, {
+    'Content-Type': 'application/json',
+    'X-Powered-By': 'Node.js'
+  });
+
   res.write('<h1>Hello</h1>');
-  res.end(JSON.stringify({ success: true, data: todos }));
+  res.end(
+    JSON.stringify({ success: false, data: null, error: 'data not found' })
+  );
 });
 
 const PORT = 7070;
