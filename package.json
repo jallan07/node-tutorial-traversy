@@ -1,0 +1,24 @@
+{
+  "name": "node-tutorial-traversy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jallan07/node-tutorial-traversy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jallan07/node-tutorial-traversy/issues"
+  },
+  "homepage": "https://github.com/jallan07/node-tutorial-traversy#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
