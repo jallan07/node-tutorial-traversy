@@ -1,32 +1,23 @@
 const express = require('express');
+// bring in the methods that we defined in the controllers/bootcamps.js file
+const {
+  getAllBootcamps,
+  getOneBootcamp,
+  createBootcamp,
+  updateBootcamp,
+  deleteBootcamp
+} = require('../controllers/bootcamps');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.status(200).json({ success: true, msg: 'Show all bootcamps' });
-});
+// the routes below access the route of /api/v1/bootcamps and then use a GET and POST request with the cooresponding methods defined from the controllers doc
+router.route('/').get(getAllBootcamps).post(createBootcamp);
 
-router.post('/', (req, res) => {
-  res.status(200).json({ success: true, msg: 'Create new bootcamp' });
-});
+// the routes below access the route of /api/v1/bootcamps/:id and then use a GET, PUT, and DELETE request with the cooresponding methods defined from the controllers doc
+router
+  .route('/:id')
+  .get(getOneBootcamp)
+  .put(updateBootcamp)
+  .delete(deleteBootcamp);
 
-router.put('/:id', (req, res) => {
-  res
-    .status(200)
-    .json({ success: true, msg: `Update bootcamp: ${req.params.id}` });
-});
-
-router.get('/:id', (req, res) => {
-  res.status(200).json({
-    success: true,
-    msg: `Show bootcamp: ${req.params.id}`
-  });
-});
-
-router.delete('/:id', (req, res) => {
-  res.status(200).json({
-    success: true,
-    msg: `Delete bootcamp: ${req.params.id}`
-  });
-});
-
+// the routes are then exported so that we can use them in the main server.js file
 module.exports = router;
