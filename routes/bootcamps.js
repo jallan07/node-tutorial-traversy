@@ -9,10 +9,10 @@ const {
 } = require('../controllers/bootcamps');
 const router = express.Router();
 
-// the routes below access the route of /api/v1/bootcamps and then use a GET and POST request with the cooresponding methods defined from the controllers doc
+// the routes below access the route of /api/v1/bootcamps and then use a GET and POST request with the cooresponding methods defined from the controllers file
 router.route('/').get(getAllBootcamps).post(createBootcamp);
 
-// the routes below access the route of /api/v1/bootcamps/:id and then use a GET, PUT, and DELETE request with the cooresponding methods defined from the controllers doc
+// the routes below access the route of /api/v1/bootcamps/:id and then use a GET, PUT, and DELETE request with the cooresponding methods defined from the controllers file
 router
   .route('/:id')
   .get(getOneBootcamp)
